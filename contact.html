@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habone — Contact</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="curR"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Habone<span>.</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html" class="nav-pill">Contact</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="contact-wrap">
+      <div class="reveal"><div class="section-label" style="justify-content: center;">Contact</div><h2 class="section-title">Let's <em>connect</em></h2><p class="section-sub" style="margin: 0.75rem auto 0; text-align: center;">Have a question or want to work together? Send me a message directly!</p></div>
+      <div class="contact-email-card reveal">
+        <div class="contact-email-top"><div class="c-icon"><i class="fas fa-envelope"></i></div><div><h4>Send me a message</h4><p>habonemahdi0@gmail.com</p></div></div>
+        <div class="msg-form">
+          <input type="text" id="senderName" placeholder="Your name">
+          <input type="email" id="senderEmail" placeholder="Your email">
+          <textarea id="msgBody" placeholder="Your message..."></textarea>
+          <button class="msg-send" onclick="sendMsg()"><i class="fas fa-paper-plane"></i> Send Message</button>
+          <div class="msg-success" id="msgSuccess">Message sent! I'll get back to you soon</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="chat-bot">
+  <div class="chat-toggle" onclick="toggleChat()"><i class="fas fa-comment-dots"></i></div>
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header"><span><i class="fas fa-robot"></i> Habone Assistant</span><span class="chat-close" onclick="toggleChat()">×</span></div>
+    <div class="chat-messages" id="chatMessages"><div class="message bot"><div class="bot-avatar"><i class="fas fa-robot"></i></div><div class="message-content">Hello! Ask me anything about my skills, projects, or experience!</div></div></div>
+    <div class="chat-input-area"><input type="text" id="chatInput" placeholder="Type your message..." onkeypress="if(event.key==='Enter') sendChatMessage()"><button class="chat-send" onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button></div>
+  </div>
+</div>
+
+<script src="bootstrap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
