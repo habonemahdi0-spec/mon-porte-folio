@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habone — About</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<style>
+  /* override only image-related - keep original purple style intact */
+  .about-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .about-img-col .about-img {
+    display: block;
+  }
+  /* ensure original purple theme remains */
+  .nav-logo span, .section-title em, .section-label, .chat-toggle, .chat-send {
+    /* keep original colors from style.css - no override */
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="curR"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Habone<span>.</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html" class="nav-pill">Contact</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="about-wrap">
+      <div class="about-img-col reveal">
+        <!-- add image from same folder: habonita.jpeg -->
+        <img src="habonita.jpeg" alt="Habone" class="about-img" onerror="this.onerror=null; this.src='https://placehold.co/400x400/6c5ce7/ffffff?text=Habone';">
+        <div class="about-orb"></div>
+      </div>
+      <div class="reveal">
+        <div class="section-label">About me</div>
+        <h2 class="section-title">Turning ideas into<br><em>digital reality</em></h2>
+        <div style="margin-top: 1.5rem;">
+          <p>I'm a computer engineering student who believes great software lives at the intersection of clean code and thoughtful design. My journey started with curiosity and turned into a deep passion for building things that matter.</p>
+          <p>I specialize in full-stack web development and Android apps. I love writing clean, maintainable code and obsessing over every little detail of the user experience.</p>
+        </div>
+        <div class="about-pills">
+          <span class="pill">Engineering Student</span>
+          <span class="pill">Always Learning</span>
+          <span class="pill">Open to Opportunities</span>
+          <span class="pill">Djibouti</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="chat-bot">
+  <div class="chat-toggle" onclick="toggleChat()"><i class="fas fa-comment-dots"></i></div>
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header"><span><i class="fas fa-robot"></i> Habone Assistant</span><span class="chat-close" onclick="toggleChat()">×</span></div>
+    <div class="chat-messages" id="chatMessages"><div class="message bot"><div class="bot-avatar"><i class="fas fa-robot"></i></div><div class="message-content">Hello! Ask me anything about my skills, projects, or experience!</div></div></div>
+    <div class="chat-input-area"><input type="text" id="chatInput" placeholder="Type your message..." onkeypress="if(event.key==='Enter') sendChatMessage()"><button class="chat-send" onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button></div>
+  </div>
+</div>
+
+<script src="bootstrap.min.js"></script>
+<script src="script.js"></script>
+<script>
+  // ensure image fits within the circular container properly without breaking purple theme
+  document.addEventListener("DOMContentLoaded", function() {
+    const img = document.querySelector('.about-img');
+    if (img) {
+      img.style.borderRadius = '50%';
+      img.style.width = '100%';
+      img.style.height = '100%';
+      img.style.objectFit = 'cover';
+      // add fallback parent style if needed
+      const parent = document.querySelector('.about-img-col .about-img');
+      if (parent && parent.parentElement) {
+        // keep original purple styling from style.css
+      }
+    }
+  });
+</script>
+</body>
+</html>
