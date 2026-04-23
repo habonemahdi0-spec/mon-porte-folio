@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habone — Projects</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="curR"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Habone<span>.</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html" class="nav-pill">Contact</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="proj-header reveal">
+      <div><div class="section-label">Projects</div><h2 class="section-title">Featured <em>work</em></h2></div>
+      <p class="section-sub">Things I've built with love and a lot of coffee</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card reveal"><div class="proj-top p1">🎮</div><div class="proj-body"><div class="proj-num">01 — GAME</div><h4>CLINO Game</h4><p>A strategic console game built in C++ with complex algorithms and engaging gameplay mechanics.</p><div class="proj-tags"><span class="tag">C++</span><span class="tag">Algorithms</span><span class="tag">OOP</span></div></div></div>
+      <div class="project-card reveal"><div class="proj-top p2">📱</div><div class="proj-body"><div class="proj-num">02 — MOBILE</div><h4>TaskFlow</h4><p>Android task management app with local storage and a smooth, intuitive interface for daily productivity.</p><div class="proj-tags"><span class="tag">Java</span><span class="tag">Android</span><span class="tag">SQLite</span></div></div></div>
+      <div class="project-card reveal"><div class="proj-top p3">📚</div><div class="proj-body"><div class="proj-num">03 — WEB APP</div><h4>VocabMaster</h4><p>A full-stack English learning platform with smart flashcards, quizzes, and progress tracking.</p><div class="proj-tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="chat-bot">
+  <div class="chat-toggle" onclick="toggleChat()"><i class="fas fa-comment-dots"></i></div>
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header"><span><i class="fas fa-robot"></i> Habone Assistant</span><span class="chat-close" onclick="toggleChat()">×</span></div>
+    <div class="chat-messages" id="chatMessages"><div class="message bot"><div class="bot-avatar"><i class="fas fa-robot"></i></div><div class="message-content">Hello! Ask me anything about my skills, projects, or experience!</div></div></div>
+    <div class="chat-input-area"><input type="text" id="chatInput" placeholder="Type your message..." onkeypress="if(event.key==='Enter') sendChatMessage()"><button class="chat-send" onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button></div>
+  </div>
+</div>
+
+<script src="bootstrap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
